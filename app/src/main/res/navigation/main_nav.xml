@@ -29,7 +29,11 @@
         android:id="@+id/searchFragment"
         tools:layout="@layout/fragment_search"
         android:name="com.takehomechallenge.ahmadi.view.search.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         tools:layout="@layout/fragment_detail"

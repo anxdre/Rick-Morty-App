@@ -47,6 +47,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             srHome.setOnRefreshListener {
                 viewModel.fetchRefresh()
             }
+
+            sbHome.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+            }
+
+            btnFavorite.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_favoriteFragment)
+            }
         }
 
         viewModel.listOfCharacter.observe(viewLifecycleOwner) {
