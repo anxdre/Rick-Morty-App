@@ -16,6 +16,7 @@ list of feature  :
 - List of character
 - Detail character
 - Search Character
+- simple API call unit test
 
 
 ## <a name="libraries"></a> Libraries :
