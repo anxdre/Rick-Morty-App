@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.takehomechallenge.ahmadi.view.home.HomeItemAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_main"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.search.SearchBar
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_round_bookmarks" />
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/sr_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tb_main"
+            android:padding="8dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{adapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_character" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.takehomechallenge.ahmadi.view.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        tools:layout="@layout/fragment_favorite"
+        android:name="com.takehomechallenge.ahmadi.view.favorite.FavoriteFragment"
+        android:label="FavoriteFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        tools:layout="@layout/fragment_search"
+        android:name="com.takehomechallenge.ahmadi.view.search.SearchFragment"
+        android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/detailFragment"
+        tools:layout="@layout/fragment_detail"
+        android:name="com.takehomechallenge.ahmadi.view.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="data"
+            app:argType="com.takehomechallenge.ahmadi.data.model.Character" />
+    </fragment>
+</navigation>

@@ -1,5 +1,6 @@
 package com.takehomechallenge.ahmadi.data.model
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class Character(
@@ -27,4 +28,4 @@ data class Character(
     val type: String? = "",
     @SerializedName("url")
     val url: String? = ""
-)
+):Serializable

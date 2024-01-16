@@ -10,16 +10,14 @@ import kotlinx.coroutines.flow.flow
 class CharacterApiRequest(private val service: RickMortyService) :
     ApiHelper<BaseResponse<Character>, Unit> {
 
-    private var query = ""
+    private var query = hashMapOf<String, String>()
 
     override fun exec(): Flow<BaseResponse<Character>> {
         return flow { emit(service.getAllCharacter(query)) }
     }
 
     override fun buildQuery(hashMap: HashMap<String, String>) {
-        if (hashMap["query"] == null) {
-            throw NoSuchFieldException("Query Not Found")
-        }
-        query = hashMap["query"].toString()
+        query.clear()
+        query.putAll(hashMap)
     }
 }
