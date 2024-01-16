@@ -17,6 +17,8 @@ list of feature  :
 - Detail character
 - Search Character
 - simple API call unit test
+- MVVM Architecture
+- Data & View Binding technique
 
 
 ## <a name="libraries"></a> Libraries :
